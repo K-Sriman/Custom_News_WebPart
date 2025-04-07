@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.20.2",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "custom-news-web-part",
+    "libraryId": "546800c4-2d64-4db6-a8ab-ae32e1a6ad99",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "custom-news-web-part",
+    "solutionShortDescription": "custom-news-web-part description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

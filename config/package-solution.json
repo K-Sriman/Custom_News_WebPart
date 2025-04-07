@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "custom-news-web-part-client-side-solution",
+    "id": "546800c4-2d64-4db6-a8ab-ae32e1a6ad99",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "custom-news-web-part description"
+      },
+      "longDescription": {
+        "default": "custom-news-web-part description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "custom-news-web-part Feature",
+        "description": "The feature that activates elements of the custom-news-web-part solution.",
+        "id": "d8e39825-7925-4008-bf55-4f8adb5a9f18",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/custom-news-web-part.sppkg"
+  }
+}

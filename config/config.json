@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "custom-news-web-part-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/customNewsWebPart/CustomNewsWebPartWebPart.js",
+          "manifest": "./src/webparts/customNewsWebPart/CustomNewsWebPartWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CustomNewsWebPartWebPartStrings": "lib/webparts/customNewsWebPart/loc/{locale}.js"
+  }
+}
