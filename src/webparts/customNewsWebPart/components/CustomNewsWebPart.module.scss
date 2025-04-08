@@ -3,7 +3,8 @@
   justify-content: space-around;
   align-items: center;
   border: solid rgba(131, 131, 131, 0.922) 1px;
-  padding: 2px;
+  // padding: 2px;
+ padding:20px 2px 2px;
   margin: 2px;
   border-radius: 10px;
   background-color: rgba(243, 243, 243, 0.83);
@@ -12,11 +13,14 @@
 
 .category{
 margin: 2px;
+font-size: 17px;
+font-weight: 400;
 
 }
 .categoryCounts{
 margin:2px;
-
+font-size: 40px;
+font-family: system-ui,  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .Heading{
@@ -28,24 +32,24 @@ margin:2px;
  
 .card {
   box-sizing: border-box;
-  width: 100px;
-  height: 154px;
-  // background: rgba(65, 163, 244, 0.879);
-  background-image: linear-gradient(to right bottom, #a2bcbb, #7ebbc4, #53b7d6, #1db1ec, #07a7ff);
+  width:160px;
+  margin: 4px;
+  height: 120px;
   border: 1px solid white;
   box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(6px);
-  border-radius: 17px;
+  border-radius: 7px;
   text-align: center;
-  // cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.5s;
   display: flex;
+  gap: 5px;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   user-select: none;
   font-weight: bolder;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .card:hover {
@@ -55,4 +59,17 @@ margin:2px;
 
 .card:active {
   transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.uncategorizedToggle{
+  position: absolute !important;
+  right: 10px;
+  top: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0263ac;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
 }

@@ -9,6 +9,7 @@ import { BaseClientSideWebPart,
 import CustomNewsWebPart from './components/CustomNewsWebPart';
 import { ICustomNewsWebPartProps } from './components/ICustomNewsWebPartProps';
 import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
+// import * as ReactDOM from 'react-dom';
 
 export interface ICustomNewsWebPartWebPartProps {
   // ctx: WebPartContext;
@@ -25,6 +26,12 @@ export default class CustomNewsWebPartWebPart extends BaseClientSideWebPart<ICus
 
     ReactDom.render(element, this.domElement);
   }
+
+
+  protected onDispose(): void {
+    ReactDom.unmountComponentAtNode(this.domElement);
+  }
+  
   public onInit(): Promise<void> {
     sp.setup({ spfxContext: this.context });
     return super.onInit();
