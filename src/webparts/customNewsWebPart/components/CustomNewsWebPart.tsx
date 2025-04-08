@@ -10,17 +10,11 @@ export interface CategoryCounts {
 const PageCategoryCounter: React.FC = () => {
   const [categoryCounts, setCategoryCounts] = useState<CategoryCounts>({});
   const [loading, setLoading] = useState<boolean>(true);
-  const [fullDetails, setFullDetails]=useState<object>({});
 
   useEffect(() => {
 
     const loadCounts = async () => {
       try {
-      const FullDetailss =   await services.getNewswithFullDetails();
-        console.log(fullDetails);
-      if(FullDetailss){
-        setFullDetails(FullDetailss);
-      }
         const count = await services.fetchCategoryCounts();
         console.log(count);
         if (count) {
@@ -38,14 +32,14 @@ const PageCategoryCounter: React.FC = () => {
 
   return (
     <> 
-      <div className={styles.Heading}>page categories</div>
+      <div className={styles.Heading}>Page Categories</div>
     <div className={styles.OutterContainer}>
       {loading ? (
         <div>Loading category counts...</div>
       ) : (
         
         Object.keys(categoryCounts).map((category) => (
-          <div key={category} className={styles.detailsContainer}>
+          <div key={category} className={styles.card}>
             <div className={styles.category}>{category}</div>
             <div className={styles.categoryCounts}>{categoryCounts[category]}</div>
           </div>

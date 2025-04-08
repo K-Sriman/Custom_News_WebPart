@@ -6,14 +6,13 @@ export interface news{
 export interface PageItem {
   Id: number;
   Title: string;
-  BannerImageUrl: any;
+  BannerImageUrl: string;
   FileRef: string;
-  PageCategory: string | null;
+  PageCategory: string | undefined;
   Description?: string;
   Editor?: {
     Title: string;
     Id: number;
     EMail: string;
   };
-  [key: string]: any;
 }

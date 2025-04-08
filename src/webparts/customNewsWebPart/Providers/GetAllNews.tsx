@@ -1,5 +1,6 @@
 import { sp } from "@pnp/sp";
 import { CategoryCounts } from "../components/CustomNewsWebPart";
+import { news } from "../Model/news";
 
 export const fetchCategoryCounts = async (): Promise<CategoryCounts> => {
   try {
@@ -21,30 +22,24 @@ export const fetchCategoryCounts = async (): Promise<CategoryCounts> => {
   }
 };
 
-export const getNewswithFullDetails = async(): Promise<any> => {
-    try{
-        const fullDetails= sp.web.lists.getByTitle("Site Pages").items.getAll()
-        return fullDetails;
-    }
-    catch(e){
-        console.error(e);
-        return {};
-    }
-}
-export const getSpecificDetails = async (): Promise<any> => {
+// export const getNewswithFullDetails = async(): Promise<any> => {
+//     try{
+//         const fullDetails= sp.web.lists.getByTitle("Site Pages").items.getAll()
+//         return fullDetails;
+//     }
+//     catch(e){
+//         console.error(e);
+//         return {};
+//     }
+// }
+export const getSpecificDetails = async (): Promise<news[]> => {
   try {
-    // const fullDetailssss = await sp.web.lists
-    //   .getByTitle("Site Pages")
-    //   .items
-    //   .select("Id", "Title", "PageCategory", "Description", "BannerImageUrl", "FileRef")
-    //   .getAll();
-
-      const fullDetails = await sp.web.lists
-  .getByTitle("Site Pages")
-  .items
-  .select("Id", "Title", "Description", "PageCategory", "BannerImageUrl", "FileRef", "Editor/Title", "Editor/Id", "Editor/EMail")
-  .expand("Editor")
-  .getAll();
+       const fullDetails = await sp.web.lists
+      .getByTitle("Site Pages")
+      .items
+      .select("Id", "Title", "Description", "PageCategory", "BannerImageUrl", "FileRef", "Editor/Title", "Editor/Id", "Editor/EMail")
+      .expand("Editor")
+      .getAll();
 
     return fullDetails;
   } catch (e) {
