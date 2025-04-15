@@ -1,26 +1,29 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { sp } from '@pnp/sp';
-import { BaseClientSideWebPart, 
-  // WebPartContext 
-
-} from '@microsoft/sp-webpart-base';
+import { BaseClientSideWebPart} from '@microsoft/sp-webpart-base';
 
 import CustomNewsWebPart from './components/CustomNewsWebPart';
 import { ICustomNewsWebPartProps } from './components/ICustomNewsWebPartProps';
-import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
-// import * as ReactDOM from 'react-dom';
+
+  import {
+    IPropertyPaneConfiguration,
+    PropertyPaneToggle
+  } from '@microsoft/sp-property-pane';
+  
+
 
 export interface ICustomNewsWebPartWebPartProps {
-  // ctx: WebPartContext;
+  showUncategorized: boolean;
 }
+
 
 export default class CustomNewsWebPartWebPart extends BaseClientSideWebPart<ICustomNewsWebPartWebPartProps> {
   public render(): void {
     const element: React.ReactElement<ICustomNewsWebPartProps> = React.createElement(
       CustomNewsWebPart,
       {
-        // ctx: this.context  // Passing the WebPartContext as ctx
+        showUncategorized: this.properties.showUncategorized
       }
     );
 
@@ -39,7 +42,24 @@ export default class CustomNewsWebPartWebPart extends BaseClientSideWebPart<ICus
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
-      pages: []
+      pages: [
+        {
+          header: { description: "Toggle the view of Uncategorized page categories." },
+          groups: [
+            {
+              groupName: "Display Settings",
+              groupFields: [
+                PropertyPaneToggle('showUncategorized', {
+                  label: "Show Uncategorized Pages",
+                  onText: "Shown",
+                  offText: "Hidden"
+                })
+              ]
+            }
+          ]
+        }
+      ]
     };
   }
+  
 }
